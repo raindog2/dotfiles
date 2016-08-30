@@ -6,7 +6,7 @@ set my_name = "Mark Purcell"
 
 set folder = imaps://imap.gmail.com/
 set imap_user = raindog222@gmail.com
-set imap_pass = Fdfacg1985
+set imap_pass = 
 set spoolfile = +INBOX
 mailboxes = +INBOX
 
@@ -18,7 +18,7 @@ set my_user=raindog222
 set from=raindog222@gmail.com
 set use_from=yes
 set smtp_url=smtps://raindog222@smtp.gmail.com
-set smtp_pass = Fdfacg1985
+set smtp_pass = 
 set ssl_force_tls=yes
 set ssl_starttls=yes
 set record=+Sent 
