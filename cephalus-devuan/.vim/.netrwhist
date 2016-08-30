@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/mpurcell/btsync/reviews/2015'
+let g:netrw_dirhist_2='/etc/network'
+let g:netrw_dirhist_3='/etc/apt'
+let g:netrw_dirhist_4='/home/mpurcell/.newsbeuter'
