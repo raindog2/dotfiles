@@ -1,0 +1,37 @@
+#Mutt color file for terminals that are white on black
+#Run ': source ~/.mutt/color_black' to call this config
+
+# feature           fg              bg
+
+color normal	    white           default
+color attachment    yellow          default
+color hdrdefault    cyan            default
+color indicator     cyan            brightblack
+color markers	    brightred       default
+color quoted	    green           default
+color signature     cyan            default
+color status	    cyan            default
+color tilde	    blue            default
+color tree	    red             default
+
+color index         magenta         default ~N      #new messages
+color index         magenta         default ~U      #unread messages
+color index         red             default ~F      #flagged messages
+color index         blue            default ~Q      #replied-to messages
+color index	    yellow          black ~T      #tagged messages
+color index	    brightblack     default ~D      #deleted messages 
+color index	    brightblack     default "~D~U"  #deleted, unread messages 
+color index	    brightblack     default "~D~N"  #deleted, new messages 
+
+color header	    brightgreen     default ^From:
+color header	    brightblue      default ^To:
+color header	    brightblue      default ^Reply-To:
+color header	    brightblue      default ^Cc:
+color header	    brightcyan      default ^Subject:
+
+# identifies email addresses
+color body	    brightred default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+
+# identifies URLs
+color body	    brightblue default (https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+
+

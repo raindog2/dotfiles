@@ -1,0 +1,137 @@
+###### CONFIGURATION FILE FOR RAINDOG MAIL #####
+
+###### RECEIVING MAIL #####
+
+set my_name = "Mark Purcell"
+
+set folder = imaps://imap.gmail.com/
+set imap_user = raindog222@gmail.com
+set imap_pass = Fdfacg1985
+set spoolfile = +INBOX
+mailboxes = +INBOX
+
+##### SENDING MAIL #####
+
+set editor="vim +':set textwidth=0' +':set wrapmargin=0' +':set wrap'"
+set realname='Mark Purcell'
+set my_user=raindog222
+set from=raindog222@gmail.com
+set use_from=yes
+set smtp_url=smtps://raindog222@smtp.gmail.com
+set smtp_pass = Fdfacg1985
+set ssl_force_tls=yes
+set ssl_starttls=yes
+set record=+Sent 
+#unset record
+
+# Set the color scheme
+source ~/.mutt/color_black
+#source ~/.mutt/color_white
+
+##### ALIASES ######
+
+# Where does mutt store aliases (address book)?
+set alias_file=~/.mutt/aliases
+# Where does mutt look for aliases (address book)?
+source ~/.mutt/aliases
+#Sorting aliases
+set sort_alias = alias
+set reverse_alias = yes
+
+# Store messages locally to speed things up, like searching message bodies.
+# Can be the same folder as header_cache.
+# This will cost important disk usage according to your e-mail amount.
+set message_cachedir = "~/.cache/mutt"
+
+# Store message headers locally to speed things up.
+# If hcache is a folder, Mutt will create sub cache folders for 
+# each account which may speeds things up even more.
+set header_cache = ~/.cache/mutt
+
+#Avoiding line breaks in messages
+#Not 100% sure how this works
+set text_flowed=yes
+
+# Ask if user wants to forward attachments
+set mime_forward=ask-no
+
+# Set default to no when asking to postpone
+set postpone=ask-no
+
+# Specify where to save and/or look for postponed messages.
+set postponed = +[Gmail]/Drafts
+
+# when updating mailbox, purge deleted messages without asking
+set delete=yes
+
+# Don't mark unread messages as old, leave them marked new
+set nomark_old
+
+# Confirm when Mutt receives the quit-program command
+set quit=ask-yes
+
+# Leave out line-break markers
+set nomarkers
+
+#Set the usual threading but sort a thread by the date the last 
+#message in the thread was received. This keeps a thread that 
+#receives new mail at the bottom of your mailbox rather than at the top.
+set sort=threads
+set strict_threads=yes
+set sort_aux = last-date-received
+
+# Allow Mutt to open new imap connection automatically.
+unset imap_passive
+
+# Set the date in the index to include the year
+set index_format="%4C %Z %[!%b %d %y] %-17.17F %s"
+
+# Keep IMAP connection alive by polling intermittently (time in s)
+set imap_keepalive = 1800
+
+# How often to check for new mail (in s).
+set mail_check = 120
+
+#Some custom keybindings
+bind pager e next-line
+bind pager u previous-line
+bind pager \cu previous-page
+bind pager \cd next-page
+#bind pager gg top
+#bind pager G bottom
+bind index ,w sync-mailbox
+bind index G imap-fetch-mail
+bind index e next-undeleted
+bind index u previous-undeleted
+bind browser e next-entry
+bind browser u previous-entry
+bind alias e next-entry
+bind alias u previous-entry
+
+#macro pager d '<delete-message><exit>'
+macro pager d "<delete-message>i" "Delete Message"
+#macro to move spam to Gmail's spam folder
+macro index j "<save-message>=[Gmail]/Spam<enter><enter>"
+
+#Have lots of messages with O flags?  Clear them!
+#macro index A  "<tag-pattern>~U<enter>\
+#<tag-prefix><clear-flag>O\
+#<untag-pattern>~T<enter>" \
+#[]["Mark all as read"
+
+########## ARCHIVED OPTIONS ##########
+
+# This option allows you to edit the header of your outgoing messages 
+# along with the body of your message (but it erases all the headers generated
+# when replying).
+#set edit_headers=yes
+
+# When set along with "$edit_headers," Mutt will skip the initial send-menu 
+# and allow you to immediately begin editing the body of your message. The send-menu 
+# may still be accessed once you have finished editing the body of your message.
+#set autoedit=yes
+
+# When set, the initial prompt for recipients and subject are skipped when 
+# replying to messages, and the initial prompt for subject is skipped when forwarding
+# messages, but then it is all blank and has to be filled in by hand.
+#set fast_reply=yes
