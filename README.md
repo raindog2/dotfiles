@@ -1,8 +1,6 @@
 # dotfiles
-These are config files for desktop settings.
+These are config files for desktop settings on cephalus and thrasymachus.
 
 My first repo...and readme.
 
-This seems to be markdown?
-
-I don't know it, but html seems to work too!
+This is **markdown** and so far it seems ~~pretty good~~ *awesome*!
